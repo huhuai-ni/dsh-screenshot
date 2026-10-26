@@ -1,0 +1,53 @@
+{
+  "name": "dsh-screenshot",
+  "version": "0.1.0",
+  "description": "DSH 插件：全局快捷键截屏（微信式拖框选区、自动复制到剪贴板）",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "scripts",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "screenshot",
+    "hotkey"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-settings-plugins"
+      ]
+    }
+  },
+  "author": "huhuai-ni",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huhuai-ni/dsh-screenshot.git"
+  },
+  "homepage": "https://github.com/huhuai-ni/dsh-screenshot#readme",
+  "bugs": {
+    "url": "https://github.com/huhuai-ni/dsh-screenshot/issues"
+  }
+}
